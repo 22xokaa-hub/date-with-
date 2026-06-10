@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>❤️ سؤال مهم ❤️</title>
+
+<style>
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+
+    font-family:Arial,sans-serif;
+
+    overflow:hidden;
+
+    text-align:center;
+
+}
+
+h1{
+
+    color:#fff;
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+img{
+
+    width:300px;
+
+    max-width:80%;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+}
+
+.buttons{
+
+    position:relative;
+
+}
+
+button{
+
+    border:none;
+
+    padding:15px 35px;
+
+    font-size:22px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:0.2s;
+
+}
+
+#yes{
+
+    background:#2ecc71;
+
+    color:white;
+
+    margin-right:15px;
+
+}
+
+#no{
+
+    background:#e74c3c;
+
+    color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>هتيجي معايا؟ ❤️</h1>
+
+<img id="gif"
+
+src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+
+<div class="buttons">
+
+    <button id="yes">Yes ❤️</button>
+
+    <button id="no">No 😢</button>
+
+</div>
+
+<script>
+
+let size = 1;
+
+const gifs = [
+
+"https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif",
+
+"https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif",
+
+"https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
+
+"https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif"
+
+];
+
+const yesBtn = document.getElementById("yes");
+
+const noBtn = document.getElementById("no");
+
+const gif = document.getElementById("gif");
+
+function moveNoButton() {
+
+    size += 0.25;
+
+    yesBtn.style.transform = scale(${size});
+
+    gif.src = gifs[Math.floor(Math.random() * gifs.length)];
+
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    noBtn.style.position = "absolute";
+
+    noBtn.style.left = Math.random() * maxX + "px";
+
+    noBtn.style.top = Math.random() * maxY + "px";
+
+}
+
+noBtn.addEventListener("mouseover", moveNoButton);
+
+noBtn.addEventListener("click", moveNoButton);
+
+yesBtn.addEventListener("click", () => {
+
+    document.body.innerHTML = `
+
+        <h1 style="color:white;">🎉 YAAAAY! 🎉</h1>
+
+        <img src="https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif" width="350">
+
+        <h2 style="color:white;">مستنيك ❤️🥰</h2>
+
+    `;
+
+});
+
+</script>
+
+</body>
+
+</html>
